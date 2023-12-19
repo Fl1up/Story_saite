@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load random %}
+{% block content %}
+    {% load mediapath %}
+
+    {% include "front/slider.html" %}
+
+
+    <div class="container marketing">
+        <h1 style="text-align: center">УСЛУГИ</h1>
+        {% include "front/offers.html" %}
+    </div>
+    {% include "front/advantages.html" %}
+    {% include "front/new_project.html" %}
+    {% include "front/call.html" %}
+
+{% endblock %}
+
