@@ -1,0 +1,83 @@
+<style>
+    .callс {
+        position: relative;
+        height: 50%;
+        background-size: cover;
+        background-attachment: fixed;
+        background-image: url("/media/img_17.png");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10% 0 10% 20%; /* top, right, bottom, left padding */
+        border: 10px solid black;
+    }
+
+    .callс::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4); /* Цвет затемнения */
+    }
+
+    .callс .calls form {
+        border-radius: 40px;
+        border: 1px solid #fff; /* Добавьте границу белого цвета */
+        color: #fff; /* Измените цвет текста на белый */
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0.9;
+        padding: 20px; /* Добавьте отступы */
+        width: 50%; /* Занимайте всю доступную ширину */
+    }
+
+    @media (max-width: 768px) {
+        .callс {
+            padding: 10% 10% 10% 10%;
+            width: 150% /* Измените отступы для мобильных устройств */
+        }
+    }
+
+
+</style>
+
+<h1 style="text-align: center">Здесь вы можете посчитать общую квадратуру</h1>
+
+<div class="callс">
+    <div class="container d">
+        <div class="py-5 text-center">
+            <div class="calls">
+                <form id="areaCalculatorForm" class="p-1 p-md-5 border rounded-7" method="post">
+                    <h4 class="my-0 fw-normal">Калькулятор площади м2</h4>
+                    <div class="card-body" style="margin:4px">
+                        <div>
+                            <label for="length">Длинна:</label>
+                            <input class="form-control mb-2" type="number" id="length" name="length" required>
+                            <label for="width">Ширина:</label>
+                            <input class="form-control mb-2" type="number" id="width" name="width" required>
+                            <label for="sum_metr">Цена за метр:</label>
+                            <input class="form-control mb-2" type="number" id="sum_metr" name="sum_metr" required>
+                        </div>
+                        <br>
+                        <input type="submit" value="Посчитать" class="w-50 btn btn-lg btn-primary">
+                    </div>
+                    <div id="result"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('areaCalculatorForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Предотвращает перезагрузку страницы
+        var length = parseInt(document.getElementById('length').value);
+        var width = parseInt(document.getElementById('width').value);
+        var one_metr = parseInt(document.getElementById('sum_metr').value);
+        var area = length * width;
+        var sum = area * one_metr;
+
+        document.getElementById('result').innerHTML = '<h2>Общая площадь: ' + area + ' м2<br> Общая цена: ' + sum + '</h2>';
+    });
+</script>

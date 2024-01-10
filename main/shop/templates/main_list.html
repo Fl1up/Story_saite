@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load random %}
+{% block content %}
+    {% load mediapath %}
+    <body>
+    <main>
+
+        {% include "front/slider.html" %}
+        {% include "front/advantages.html" %}
+        <div class="container marketing">
+
+
+            {% include "front/offers.html" %}
+
+            <hr class="featurette-divider">
+            {% include "front/shop.html" %}
+        </div>
+
+
+        {% include "front/category.html" %}
+        {% include "front/new_project.html" %}
+        {% include "front/main_calculation.html" %}
+        {% include "front/call.html" %}
+        <div class="container marketing">
+
+
+        </div>
+
+
+    </main>
+    </body>
+
+    <script type="text/javascript" charset="utf-8" async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6300d4806ac23516c790a7a9b838e82d01a6190f7d73010293188b7a132537a8&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+
+{% endblock %}
+

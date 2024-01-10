@@ -1,0 +1,58 @@
+<style>
+    .ups {
+        margin-top: 10%;
+    }
+
+    .card {
+        position: relative;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        z-index: 1;
+    }
+
+    .btn-outline-primary {
+        color: black;
+        border-color: #ffcd39;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #ffcd39;
+        color: black; /* Цвет текста кнопки при наведении */
+    }
+</style>
+
+
+{% load mediapath %}
+
+<div class="ups">
+    <div class="row row-cols-3 mb-3 text-center">
+        {% for shop in shops %}
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-body">
+                        <img src="{% mediapath shop.image %}" width="75%" height="75%" alt="Иллюстрация">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <h3 class="card-text">{{ shop.name|title|truncatechars:100 }}</h3>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.querySelectorAll('.card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        openModal();
+                    });
+                });
+
+            </script>
+        {% endfor %}
+    </div>
+</div>
+
+
