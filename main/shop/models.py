@@ -14,3 +14,8 @@ class Shop(models.Model):
     class Meta:
         verbose_name = "Магазин"
         verbose_name_plural = "Магазины"
+
+
+class Calculation(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)

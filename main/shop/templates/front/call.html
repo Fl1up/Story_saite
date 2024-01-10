@@ -5,24 +5,69 @@
         background-size: cover;
         background-attachment: fixed;
         background-image: url("/media/img_8.png");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20% 0 20% 50%; /* top, right, bottom, left padding */
+        border: 10px solid black;
+        color: white; /* Установите цвет текста в белый */
+        z-index: 3;
     }
 
-    .call::before {
+    .call::after {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* черный цвет с прозрачностью 50% */
+        background-color: rgba(0, 0, 0, 0.4); /* Цвет затемнения */
+        z-index: 1; /* Установите z-index, чтобы слой был под текстом */
     }
-    #square {
-    width: 400px;
-    height: 400px;
-    background: white;
-}
-</style>
 
-<div class="call">
-<div id="square"></div>
-</div>
+    .call .calls form {
+        border-radius: 40px;
+        border: 1px solid #fff; /* Добавьте границу белого цвета */
+        color: #fff; /* Измените цвет текста на белый */
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0.9;
+        padding: 20px; /* Добавьте отступы */
+        width: 50%; /* Занимайте всю доступную ширину */
+        position: relative;
+        z-index: 2; /* Установите z-index, чтобы форма была над затемнением */
+    }
+
+    @media (max-width: 768px) {
+        .call {
+            padding: 20% 0 20% 50%; /* top, right, bottom, left padding */
+        }
+    }
+</style>
+{% block content %}
+    <div class="call">
+        <div class="text-lg-start" style="margin-left: -50%; color: white; max-width: 70%;">
+            <h2 style="font-size: 3vh">Свяжитесь с нами заполнив форму</h2>
+            <h3>Строительная группа Нархозстрой сотрудничает с риэлторскими и девелоперскими компаниями по реализации
+                проектирования, производства и строительства индивидуальной малоэтажной и коммерческой недвижимости.<br>Мы
+                приглашаем застройщиков и дилеров к сотрудничеству.</h3>
+        </div>
+
+        <div class="container d">
+
+            <div class="py-5 text-center">
+
+                <div class="calls">
+                    <form class="p-1 p-md-5 border rounded-7" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="form-control mb-2" name="name" placeholder="Ваше имя"/>
+                        <input class="form-control mb-2" name="email" placeholder="email"/>
+                        <input class="form-control mb-2" name="number" placeholder="8-951-*--**"/>
+                        <input class="form-control mb-2" name="message" placeholder="Дополнительная информация"/>
+                        <button type="submit" class="btn btn-danger form-control">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

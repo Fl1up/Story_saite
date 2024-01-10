@@ -1,19 +1,70 @@
-{#<hr style="margin: 40px 0;#}
-{#	padding: 0;#}
-{#	height: 0;#}
-{#	border: none;#}
-{#	border-top: 2px dashed black;">#}
+<style>
+    .or_bg {
+        background-color: #f9ca24;
+        border-radius: 25%;
+        width: 150%;
+        height: 100%;
+        margin: 20px;
+        z-index: 1;
+        text-align: center;
+        border: 5px solid black;
+    }
+
+    .crug {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .flex-item {
+        flex: 1;
+        max-width: 300px; /* Указываем максимальную ширину для адаптивности */
+    }
+</style>
 <div class="flex-container">
-    <div class="flex-item">
-        <img src="/media/ruler.png" alt="" class="round" style="background-color: #20c997;width: 80%;height: 80%">
-        <p>Текст под первой фотографией</p>
+    <div class="flex-item card" style="border: white">
+        <div class="or_bg">
+            <img src="/media/free-icon-paint-swatch-3515445.png" alt="" style="width: 70%;">
+            <h1>Производство</h1>
+            <p style="font-size: 150%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
+                день
+                полотно будет изготовлено.
+                Назначается дата монтажа</p>
+        </div>
     </div>
-    <div class="flex-item">
-        <img src="/media/badge.png" alt="" class="round" style="background-color: #6a1a21;width: 80%;height: 80%">
-        <p>Текст под второй фотографией</p>
+    <div class="flex-item card" style="border: white">
+        <div class="or_bg">
+            <div class="crug">
+                <img src="/media/free-icon-production-2640872.png" alt="" style="width: 50%;">
+                <h1>Производство</h1>
+                <p style="font-size: 150%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
+                    день
+                    полотно будет изготовлено.
+                    Назначается дата монтажа</p>
+            </div>
+        </div>
     </div>
-    <div class="flex-item">
-        <img src="/media/home.png" alt="" class="round" style="background-color: #055160;width: 80%;height: 80%">
-        <p>Текст под третьей фотографией</p>
+    <div class="flex-item card" style="border: white">
+        <div class="or_bg">
+            <img src="/media/free-icon-paint-swatch-3515445.png" alt="" style="width: 50%;">
+            <h1>Производство</h1>
+            <p style="font-size: 150%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
+                день
+                полотно будет изготовлено.
+                Назначается дата монтажа</p>
+        </div>
     </div>
 </div>
+<script>
+    document.querySelectorAll('.or_bg').forEach(card => {
+        card.addEventListener('click', () => {
+            openModal();
+        });
+    });
+</script>
