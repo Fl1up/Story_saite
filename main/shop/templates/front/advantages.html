@@ -1,13 +1,14 @@
 <style>
+
     .or_bg {
         background-color: #f9ca24;
         border-radius: 25%;
-        width: 150%;
-        height: 100%;
-        margin: 20px;
-        z-index: 1;
+        height: 50%;
         text-align: center;
         border: 5px solid black;
+        padding: 0 10%;
+        margin: 20px;
+
     }
 
     .crug {
@@ -24,15 +25,77 @@
 
     .flex-item {
         flex: 1;
-        max-width: 300px; /* Указываем максимальную ширину для адаптивности */
+        max-width: 100%; /* Указываем максимальную ширину для адаптивности */
+        margin: 0 7%;
     }
+
+    @media (max-width: 1440px ) {
+        .or_bg {
+            width: 100%;
+            margin: 15px;
+        }
+
+        .flex-item {
+            flex: 1;
+            max-width: 100%; /* Указываем максимальную ширину для адаптивности */
+            margin: 0 3%;
+        }
+
+    }
+
+    @media (max-width: 1024px) {
+        .or_bg {
+            height: 50%;
+        }
+
+        .flex-container {
+            align-items: flex-start; /* Добавляем это свойство */
+        }
+
+        .card {
+            width: 90%; /* Добавляем это свойство */
+        }
+    }
+
+    @media (max-width: 900px) {
+        .or_bg {
+            height: 50%;
+        }
+
+        .flex-container {
+            flex-direction: column;
+            align-items: flex-start; /* Центрируем элементы по горизонтали */
+        }
+
+        .flex-item {
+            width: 90%; /* Устанавливаем ширину 90% */
+            margin: 10px 0; /* Добавляем отступы между карточками */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .or_bg {
+            height: 50%;
+        }
+
+        .flex-container {
+            flex-direction: column;
+            align-items: flex-start; /* Центрируем элементы по горизонтали */
+        }
+
+        .flex-item {
+            width: 90%; /* Устанавливаем ширину 90% */
+            margin: 10px 0; /* Добавляем отступы между карточками */
+        }
+    }
+
 </style>
 <div class="flex-container">
     <div class="flex-item card" style="border: white">
         <div class="or_bg">
-            <img src="/media/free-icon-paint-swatch-3515445.png" alt="" style="width: 70%;">
+            <img src="/media/icon/free-icon-paint-swatch-3515445.png" alt="" style="width: 50%;">
             <h1>Производство</h1>
-            <p style="font-size: 150%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
+            <p style="font-size: 200%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
                 день
                 полотно будет изготовлено.
                 Назначается дата монтажа</p>
@@ -41,9 +104,9 @@
     <div class="flex-item card" style="border: white">
         <div class="or_bg">
             <div class="crug">
-                <img src="/media/free-icon-production-2640872.png" alt="" style="width: 50%;">
+                <img src="/media/icon/free-icon-production-2640872.png" alt="" style="width: 50%;">
                 <h1>Производство</h1>
-                <p style="font-size: 150%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
+                <p style="font-size: 200%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
                     день
                     полотно будет изготовлено.
                     Назначается дата монтажа</p>
@@ -52,15 +115,17 @@
     </div>
     <div class="flex-item card" style="border: white">
         <div class="or_bg">
-            <img src="/media/free-icon-paint-swatch-3515445.png" alt="" style="width: 50%;">
+            <img src="/media/icon/free-icon-paint-swatch-3515445.png" alt="" style="width: 50%;">
             <h1>Производство</h1>
-            <p style="font-size: 150%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
+            <p style="font-size: 200%">После выезда к вам, ваши замеры передаются в производство и уже в этот же
                 день
                 полотно будет изготовлено.
                 Назначается дата монтажа</p>
         </div>
     </div>
 </div>
+
+
 <script>
     document.querySelectorAll('.or_bg').forEach(card => {
         card.addEventListener('click', () => {
@@ -68,3 +133,4 @@
         });
     });
 </script>
+

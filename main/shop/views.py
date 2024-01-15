@@ -42,17 +42,17 @@ def contact(request):
     return render(request, 'front/contact.html', {'form': form})
 
 
-def calculate_cost(request):
-    if request.method == 'POST':
-        form = CalculationForm(request.POST)
-        if form.is_valid():
-            service = form.cleaned_data['service']
-            quantity = form.cleaned_data['quantity']
-            total_cost = service.price * quantity
-            return render(request, 'front/main_calculation.html', {'form': form, 'total_cost': total_cost})
-    else:
-        form = CalculationForm()
-    return render(request, 'front/main_calculation.html', {'form': form})
+# def calculate_cost(request):  #калькулятор
+#     if request.method == 'POST':
+#         form = CalculationForm(request.POST)
+#         if form.is_valid():
+#             service = form.cleaned_data['service']
+#             quantity = form.cleaned_data['quantity']
+#             total_cost = service.price * quantity
+#             return render(request, 'front/main_calculation.html', {'form': form, 'total_cost': total_cost})
+#     else:
+#         form = CalculationForm()
+#     return render(request, 'front/main_calculation.html', {'form': form})
 
 
 class ShopListView(ListView):

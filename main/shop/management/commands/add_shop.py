@@ -10,71 +10,51 @@ class Command(BaseCommand):
         Shop.objects.create(
             name='Двери',
             price=1000,
-            image="img_21.png",
+            image="/icon/Без имени-4.png",
             description="Лучшие двери ")
 
         Shop.objects.create(
             name='Стены',
             price=200,
-            image="img_23.png",
+            image="/icon/Без имени-2.png",
             description="Лучшие стены ")
 
         Shop.objects.create(
             name='Кирпич',
             price=200,
-            image="img_20.png",
+            image="/icon/Без имени-3.png",
             description="Лучшие кирпичи ")
-
-        Shop.objects.create(
-            name='Окна',
-            price=200,
-            image="img_19.png",
-            description="Лучшие окна ")
-
-        Shop.objects.create(
-            name='Кирпич',
-            price=200,
-            image="img_20.png",
-            description="Лучшие кирпичи ")
-
-        Shop.objects.create(
-            name='Окна',
-            price=200,
-            image="img_19.png",
-            description="Лучшие окна ")
-
         Shop.objects.create(
             name='Двери',
             price=1000,
-            image="img_21.png",
+            image="/icon/Без имени-4.png",
             description="Лучшие двери ")
 
         Shop.objects.create(
             name='Стены',
             price=200,
-            image="img_23.png",
+            image="/icon/Без имени-2.png",
             description="Лучшие стены ")
 
         Shop.objects.create(
             name='Кирпич',
             price=200,
-            image="img_20.png",
+            image="/icon/Без имени-3.png",
             description="Лучшие кирпичи ")
+        Shop.objects.create(
+            name='Двери',
+            price=1000,
+            image="/icon/Без имени-4.png",
+            description="Лучшие двери ")
 
         Shop.objects.create(
-            name='Окна',
+            name='Стены',
             price=200,
-            image="img_19.png",
-            description="Лучшие окна ")
+            image="/icon/Без имени-2.png",
+            description="Лучшие стены ")
 
         Shop.objects.create(
             name='Кирпич',
             price=200,
-            image="img_20.png",
+            image="/icon/Без имени-3.png",
             description="Лучшие кирпичи ")
-
-        Shop.objects.create(
-            name='Окна',
-            price=200,
-            image="img_19.png",
-            description="Лучшие окна ")
