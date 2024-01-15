@@ -15,6 +15,30 @@ def main(request):
     }
     return render(request, "main_list.html", context)
 
+# def contact(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             name = form.cleaned_data['name']
+#             email = form.cleaned_data['email']
+#             number = form.cleaned_data['number']
+#             message = form.cleaned_data['message']
+#
+#             # Отправка письма
+#             send_mail(
+#                 'Клиент',
+#                 f'Имя: {name}\nEmail: {email}\nНомер: {number}\nСообщение: {message}',
+#                 "margoonavt@yandex.ru",
+#                 ['margoonavt@yandex.ru'],
+#                 fail_silently=False,
+#             )
+#
+#             return render(request, "main_list.html")
+#
+#     else:
+#         form = ContactForm()
+#
+#     return render(request, 'front/contact.html', {'form': form})
 
 def contact(request):
     if request.method == 'POST':
@@ -40,6 +64,7 @@ def contact(request):
         form = ContactForm()
 
     return render(request, 'front/contact.html', {'form': form})
+
 
 
 # def calculate_cost(request):  #калькулятор
